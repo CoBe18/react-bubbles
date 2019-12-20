@@ -1,10 +1,13 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const CORS = require("cors");
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const port = 6000;
 const app = express();
 const token =
-  "ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98";
+  'esfeyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NUIhkufemQifQ';
+
+let nextId = 7;
+
 
 app.use(bodyParser.json());
 app.use(CORS());
@@ -102,7 +105,7 @@ function authenticator(req, res, next) {
 
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
-  if (username === "Lambda School" && password === "i<3Lambd4") {
+  if (username === "miobello" && password === "mister018") {
     req.loggedIn = true;
     setTimeout(() => {
       res.status(200).json({
@@ -118,16 +121,6 @@ app.post("/api/login", (req, res) => {
 
 app.get("/api/colors", authenticator, (req, res) => {
   res.send(colors);
-});
-
-app.post("/api/colors", authenticator, (req, res) => {
-  if (req.body.color !== undefined && req.body.code !== undefined) {
-    const newcolor = req.body;
-    newcolor.id = nextId;
-    colors.push(newcolor);
-  }
-  nextId = nextId + 1;
-  res.status(201).json(colors);
 });
 
 app.put("/api/colors/:id", authenticator, (req, res) => {
@@ -158,6 +151,6 @@ app.get("/", function(req, res) {
   res.send("App is working 👍");
 });
 
-app.listen(5000, () => {
-  console.log("Server listening on port 5000");
+app.listen(6000, () => {
+  console.log("Server listening on port 6000");
 });
