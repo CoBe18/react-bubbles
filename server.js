@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 6000;
+const port = 5000;
 const app = express();
 const token =
   'esfeyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NUIhkufemQifQ';
@@ -151,6 +151,6 @@ app.get("/", function(req, res) {
   res.send("App is working 👍");
 });
 
-app.listen(6000, () => {
+app.listen(5000, () => {
   console.log("Server listening on port 6000");
 });
