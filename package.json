@@ -18,7 +18,9 @@
   "homepage": "hhttps://github.com/LambdaSchool/SPA-Routing-React#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "color": "^3.1.2",
     "cors": "^2.8.4",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "potion": "^1.1.2"
   }
 }
